@@ -373,7 +373,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &723100156
 MonoBehaviour:
@@ -388,6 +388,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  primaryFireAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  secondaryFireAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  movementSkillAction:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
@@ -520,11 +547,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 477071804387203584, guid: 99c59649741458b4a8988328ddbb6dc5, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Twin Gunner
       objectReference: {fileID: 0}
     - target: {fileID: 6886877446253102364, guid: 99c59649741458b4a8988328ddbb6dc5, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6886877446253102364, guid: 99c59649741458b4a8988328ddbb6dc5, type: 3}
       propertyPath: m_LocalPosition.x

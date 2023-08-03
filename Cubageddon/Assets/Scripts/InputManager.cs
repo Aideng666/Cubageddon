@@ -8,6 +8,9 @@ public class InputManager : MonoBehaviour
     PlayerInput playerInput;
 
     [HideInInspector] public InputAction moveAction;
+    [HideInInspector] public InputAction primaryFireAction;
+    [HideInInspector] public InputAction secondaryFireAction;
+    [HideInInspector] public InputAction movementSkillAction;
 
     public static InputManager Instance { get; private set; }
 
@@ -29,5 +32,8 @@ public class InputManager : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
 
         moveAction = playerInput.actions["Move"];
+        primaryFireAction = playerInput.actions["PrimaryFire"];
+        secondaryFireAction = playerInput.actions["SecondaryFire"];
+        movementSkillAction = playerInput.actions["MovementSkill"];
     }
 }
