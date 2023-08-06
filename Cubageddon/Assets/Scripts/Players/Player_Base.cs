@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Player_Base : MonoBehaviour
 {
+    [SerializeField] protected int maxHealth = 100;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float primaryFireDelay;
@@ -16,8 +17,11 @@ public class Player_Base : MonoBehaviour
     protected Vector2 moveDirection;
     protected Vector3 aimPosition;
 
+    protected int currentHealth;
     float elaspedPrimaryFireDelay = 0;
     float elaspedSecondaryFireDelay = 0;
+
+    public float MaxSpeed { get { return maxSpeed; } }
 
     //private void OnEnable()
     //{
@@ -38,6 +42,8 @@ public class Player_Base : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         moveDirection = Vector3.zero;
+
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -119,5 +125,20 @@ public class Player_Base : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    protected void Die()
+    {
+        print("Died");
     }
 }
