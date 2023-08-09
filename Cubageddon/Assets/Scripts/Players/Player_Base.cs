@@ -12,6 +12,8 @@ public class Player_Base : MonoBehaviour
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float primaryFireDelay;
     [SerializeField] protected float secondaryFireDelay;
+    [SerializeField] protected int primaryDamage;
+    [SerializeField] protected int secondaryDamage;
 
     protected Rigidbody2D body;
     protected Vector2 moveDirection;
@@ -22,6 +24,9 @@ public class Player_Base : MonoBehaviour
     float elaspedSecondaryFireDelay = 0;
 
     public float MaxSpeed { get { return maxSpeed; } }
+
+    public int PrimaryDamage { get { return primaryDamage; } }
+    public int SecondaryDamage { get { return secondaryDamage; } }
 
     //private void OnEnable()
     //{

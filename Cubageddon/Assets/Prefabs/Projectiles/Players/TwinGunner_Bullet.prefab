@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8628836858351197423}
   - component: {fileID: 5085366184336867973}
   - component: {fileID: 4063340262584813685}
+  - component: {fileID: 371076826246629818}
   m_Layer: 0
   m_Name: TwinGunner_Bullet
   m_TagString: Untagged
@@ -148,3 +149,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &371076826246629818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568336434102572071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17709c07c086ae4ba2aeaa30b00efa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

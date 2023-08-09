@@ -72,6 +72,7 @@ public class Player_TwinGunner : Player_Base
             bullet.transform.up = transform.up;
 
             bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
+            bullet.GetComponent<Projectile_Player>().SetWeaponUsed(0);
         }
     }
 
@@ -86,6 +87,7 @@ public class Player_TwinGunner : Player_Base
             bullet.transform.up = transform.up;
 
             bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
+            bullet.GetComponent<Projectile_Player>().SetWeaponUsed(1);
         }
     }
 

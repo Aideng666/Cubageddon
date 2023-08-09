@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6850949106349221944}
   m_Layer: 0
   m_Name: TwinGunner
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,10 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b72c304e81dc641b7dac06cd5ad47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   moveSpeed: 15
   maxSpeed: 15
   primaryFireDelay: 0.2
   secondaryFireDelay: 0.2
+  primaryDamage: 5
+  secondaryDamage: 5
   leftGunAnim: {fileID: 9165033715546320659}
   rightGunAnim: {fileID: 8095465246309568852}
   bulletPrefab: {fileID: 6568336434102572071, guid: c6e50cc8f7321fc4b9c052f3fcdc29c7, type: 3}
