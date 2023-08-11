@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (elaspeDelayTime >= spawnDelay)
         {
-            GameObject enemy = Instantiate(enemyPrefabs[0], transform.position, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], transform.position, Quaternion.identity);
 
             elaspeDelayTime = 0;
         }   

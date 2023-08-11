@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Enemy_Base : MonoBehaviour
 {
+    [SerializeField] protected GameObject bulletPrefab;
+    [SerializeField] protected Transform bulletSpawn;
     [SerializeField] protected int maxHealth;
     [SerializeField] protected float moveSpeed;
-    [SerializeField] int collisionDamage = 5;
+    [SerializeField] protected float attackDelay;
+    [SerializeField] protected int collisionDamage = 5;
 
     protected Player_Base player;
     protected Rigidbody2D body;
     protected int currentHealth;
+    protected float elaspedAttackDelay = 0;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -19,12 +23,20 @@ public class Enemy_Base : MonoBehaviour
         player = FindObjectOfType<Player_Base>();
 
         currentHealth = maxHealth;
+        elaspedAttackDelay = 0;
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+        Move();
+
+        if (CanAttack())
+        {
+            Attack();
+        }
+
+       elaspedAttackDelay += Time.deltaTime;
     }
 
     protected virtual void Move()
@@ -35,6 +47,18 @@ public class Enemy_Base : MonoBehaviour
     protected virtual void Attack()
     {
         
+    }
+
+    bool CanAttack()
+    {
+        if (elaspedAttackDelay >= attackDelay)
+        {
+            elaspedAttackDelay = 0;
+
+            return true;
+        }
+
+        return false;
     }
 
     public void TakeDamage(int damage)
