@@ -76,5 +76,6 @@ public class Enemy_PistolGunner : Enemy_Base
         bullet.transform.up = bulletDirection;
 
         bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
+        bullet.GetComponent<Projectile_Enemy>().SetEnemy(this);
     }
 }

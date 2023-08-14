@@ -7,6 +7,7 @@ public class Enemy_Base : MonoBehaviour
     [SerializeField] protected GameObject bulletPrefab;
     [SerializeField] protected Transform bulletSpawn;
     [SerializeField] protected int maxHealth;
+    [SerializeField] protected int attackDamage;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float attackDelay;
     [SerializeField] protected int collisionDamage = 5;
@@ -15,6 +16,8 @@ public class Enemy_Base : MonoBehaviour
     protected Rigidbody2D body;
     protected int currentHealth;
     protected float elaspedAttackDelay = 0;
+
+    public int AttackDamage { get { return attackDamage; } }
 
     // Start is called before the first frame update
     protected virtual void Start()

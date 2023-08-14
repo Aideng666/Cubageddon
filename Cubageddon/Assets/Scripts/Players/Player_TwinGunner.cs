@@ -73,6 +73,7 @@ public class Player_TwinGunner : Player_Base
 
             bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
             bullet.GetComponent<Projectile_Player>().SetWeaponUsed(0);
+            bullet.GetComponent<SpriteRenderer>().color = leftGunAnim.gameObject.GetComponent<SpriteRenderer>().color;
         }
     }
 
@@ -88,6 +89,7 @@ public class Player_TwinGunner : Player_Base
 
             bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
             bullet.GetComponent<Projectile_Player>().SetWeaponUsed(1);
+            bullet.GetComponent<SpriteRenderer>().color = rightGunAnim.gameObject.GetComponent<SpriteRenderer>().color;
         }
     }
 
