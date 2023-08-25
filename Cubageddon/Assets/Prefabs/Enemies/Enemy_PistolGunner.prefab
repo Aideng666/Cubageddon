@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6704421772449677951}
   - component: {fileID: 3394694909002929388}
   - component: {fileID: 3681506482376216104}
+  - component: {fileID: -618715454004821886}
+  - component: {fileID: -8511342370324670719}
   m_Layer: 6
   m_Name: Enemy_PistolGunner
   m_TagString: Enemy
@@ -102,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5382632061871414415, guid: 5701bd32895280742971b1394ba1934e, type: 3}
   bulletSpawn: {fileID: 7979849461889128063}
-  enemyType: 0
+  enemyType: 1
   maxHealth: 20
   attackDamage: 0
   moveSpeed: 4
@@ -182,6 +184,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-618715454004821886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188753325616060355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c909d4fb54bf244afd7bbc373ef816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveSpeed: 300
+  newWaypointDist: 0.5
+  desiredDistanceFromTarget: 4
+--- !u!114 &-8511342370324670719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188753325616060355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &1920828803590184173
 GameObject:
   m_ObjectHideFlags: 0

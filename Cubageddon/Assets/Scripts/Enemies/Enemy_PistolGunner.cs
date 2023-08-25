@@ -68,6 +68,17 @@ public class Enemy_PistolGunner : Enemy_Base
 
     protected override void Attack()
     {
+        //check if enemy has line of sight on player
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + ((player.transform.position - transform.position).normalized), (player.transform.position - transform.position).normalized);
+
+        print(hit.collider.gameObject.tag);
+
+        if (hit.collider.gameObject.CompareTag("Wall"))
+        {
+            return;
+        }
+
+        //Creates a bullet and shoots it towards the player
         Vector3 bulletDirection = (player.transform.position - transform.position).normalized;
         bulletDirection.z = 0;
         bulletDirection = bulletDirection.normalized;

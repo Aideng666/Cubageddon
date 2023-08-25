@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI_Follow : MonoBehaviour
 {
     public Transform target;
 
     public float moveSpeed = 100f;
     public float newWaypointDist = 0.5f;
+    public float desiredDistanceFromTarget = 0;
 
     Path path;
     int currentWaypoint = 0;
@@ -24,6 +25,8 @@ public class EnemyAI : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+
+        target = FindObjectOfType<Player_Base>().transform;
     }
 
     // Update is called once per frame
@@ -60,9 +63,18 @@ public class EnemyAI : MonoBehaviour
     {
         if (seeker.IsDone())
         {
-            
+            float distanceToTarget = Vector2.Distance(body.position, target.position);
 
-            seeker.StartPath(body.position, target.position, OnPathComplete);
+            if (distanceToTarget > desiredDistanceFromTarget)
+            {
+                seeker.StartPath(body.position, target.position, OnPathComplete);
+            }
+            else if (distanceToTarget <= desiredDistanceFromTarget)
+            {
+                Vector2 directionToMove = body.position - (Vector2)target.position;
+
+                seeker.StartPath(body.position, body.position + directionToMove, OnPathComplete);
+            }
         }
     }
 

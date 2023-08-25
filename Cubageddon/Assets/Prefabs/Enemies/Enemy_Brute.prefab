@@ -222,5 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 100
+  moveSpeed: 200
   newWaypointDist: 0.5
+  desiredDistanceFromTarget: 0
