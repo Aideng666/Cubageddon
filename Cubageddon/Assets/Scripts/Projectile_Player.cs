@@ -5,6 +5,8 @@ using UnityEngine;
 public class Projectile_Player : MonoBehaviour
 {
     Player_Base player;
+    ParticleSystem hitParticle;
+    SpriteRenderer sprite;
 
     int weaponUsed = 0; // 0 = Primary, 1 = Secondary
 
@@ -12,6 +14,8 @@ public class Projectile_Player : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player_Base>();
+        sprite = GetComponent<SpriteRenderer>();
+        hitParticle = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -34,12 +38,22 @@ public class Projectile_Player : MonoBehaviour
             }
         }
 
-        //Change to pool
-        Destroy(gameObject);
+        StartCoroutine(BulletHit());
     }
 
     public void SetWeaponUsed(int weapon)
     {
         weaponUsed = weapon;
+    }
+
+    IEnumerator BulletHit()
+    {
+        hitParticle.Play();
+        sprite.enabled = false;
+
+        yield return new WaitForSeconds(0.2f);
+
+        sprite.enabled = true;
+        ProjectilePool.Instance.AddProjectileToPool(gameObject, 0);
     }
 }

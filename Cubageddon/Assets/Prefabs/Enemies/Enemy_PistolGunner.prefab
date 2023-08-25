@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.745283, g: 0.581613, b: 0, a: 1}
+  m_Color: {r: 0.85800004, g: 0.66833687, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5382632061871414415, guid: 5701bd32895280742971b1394ba1934e, type: 3}
   bulletSpawn: {fileID: 7979849461889128063}
+  enemyType: 0
   maxHealth: 20
   attackDamage: 0
   moveSpeed: 4

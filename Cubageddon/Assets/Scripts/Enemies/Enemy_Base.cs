@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Enemy_Base : MonoBehaviour
 {
     [SerializeField] protected GameObject bulletPrefab;
     [SerializeField] protected Transform bulletSpawn;
+    [SerializeField] protected EnemyTypes enemyType;
     [SerializeField] protected int maxHealth;
     [SerializeField] protected int attackDamage;
     [SerializeField] protected float moveSpeed;
@@ -17,6 +19,7 @@ public class Enemy_Base : MonoBehaviour
     protected int currentHealth;
     protected float elaspedAttackDelay = 0;
 
+    public EnemyTypes EnemyType { get { return enemyType; } }
     public int AttackDamage { get { return attackDamage; } }
 
     // Start is called before the first frame update
@@ -32,7 +35,7 @@ public class Enemy_Base : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        Move();
+        //Move();
 
         if (CanAttack())
         {
@@ -76,9 +79,7 @@ public class Enemy_Base : MonoBehaviour
 
     protected void Die()
     {
-        //Change to object pooling
-
-        Destroy(gameObject);
+        EnemyPool.Instance.AddEnemyToPool(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

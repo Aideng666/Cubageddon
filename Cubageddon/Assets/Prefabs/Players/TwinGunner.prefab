@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  moveSpeed: 15
-  maxSpeed: 15
+  moveSpeed: 25
+  maxSpeed: 25
   primaryFireDelay: 0.2
   secondaryFireDelay: 0.2
   primaryDamage: 5

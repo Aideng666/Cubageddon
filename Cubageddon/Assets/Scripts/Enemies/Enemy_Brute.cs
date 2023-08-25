@@ -12,6 +12,8 @@ public class Enemy_Brute : Enemy_Base
     protected override void Update()
     {
         base.Update();
+
+        transform.up = player.transform.position - transform.position;
     }
 
     protected override void Move()
@@ -22,7 +24,5 @@ public class Enemy_Brute : Enemy_Base
 
             body.AddForce(moveDir * moveSpeed, ForceMode2D.Force);
         }
-
-        transform.up = player.transform.position - transform.position;
     }
 }
